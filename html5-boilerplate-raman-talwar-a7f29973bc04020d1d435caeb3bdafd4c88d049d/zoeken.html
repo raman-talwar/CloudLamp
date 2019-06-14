@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>CloudLamp - zoeken</title>
+    <meta name="description" content="html5 boilerplate" />
+    <meta name="viewport" content="width=device-width, inition-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#00aba9">
+<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/zoeken.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+      integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/script/dataHandler.js"></script>
+    <script src="/script/zoeken.js"></script>
+  </head>
+  <body class="hot">
+    <header class="c-header">
+          <input class="c-searchbox" list="steden"  placeholder="zoeken" /> <datalist id="steden"> </datalist>
+    
+<!-- <div class="active-cold-3 active-hot-4 mb-4">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </div> -->
+      
+    </header>
+    <!-- <div class="o-row o-row--md">
+      <div class="o-container">
+        <div class="c-title">Binnen</div>
+        <p class="c-temp--main">22°C</p>
+        <hr />
+      </div>
+    </div>
+    <div class="o-row o-row--md u-pt-clear">
+      <div class="o-container">
+        <div class=" c-title c-title--sm">luchtkwaliteit</div>
+        <div class="o-layout o-layout--align-center c-sensor">
+          <div class="o-layout  o-layout--align-center u-1-of-2 o-layout__item">
+            <div class="c-icon o-layout__item u-1-of-2">
+              <svg
+                class="c-tab__logo is_selected"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,3.25C12,3.25 6,10 6,14C6,17.32 8.69,20 12,20C15.31,20 18,17.31 18,14C18,10 12,3.25 12,3.25M14.47,9.97L15.53,11.03L9.53,17.03L8.47,15.97M9.75,10C10.44,10 11,10.56 11,11.25C11,11.94 10.44,12.5 9.75,12.5C9.06,12.5 8.5,11.94 8.5,11.25C8.5,10.56 9.06,10 9.75,10M14.25,14.5C14.94,14.5 15.5,15.06 15.5,15.75C15.5,16.44 14.94,17 14.25,17C13.56,17 13,16.44 13,15.75C13,15.06 13.56,14.5 14.25,14.5Z"
+                />
+              </svg>
+
+              <p class="c-tab__description is_selected">vochtigheid</p>
+            </div>
+            <div class="o-layout__item u-1-of-2">
+              <p class="c-sensor_data">76%</p>
+            </div>
+          </div>
+          <div class="o-layout__item u-1-of-2">
+            <p class="c-sensor__status">te hoog</p>
+          </div>
+        </div>
+        <div class="c-tips">
+          <ul>
+            <li class="c-title c-title--sm u-left c-title--tips">Lorem ipsum dolor sit amet,</li>
+            <li class="c-title c-title--sm u-left c-title--tips">Magni est, impedit quidem fuga</li>
+            <li class="c-title c-title--sm u-left c-title--tips">
+              Ea blanditiis facilis animi impedit
+            </li>
+          </ul>
+        </div>
+        <hr />
+        <div class="o-layout o-layout--align-center c-sensor">
+          <div class="o-layout  o-layout--align-center u-1-of-2 o-layout__item">
+            <div class="c-icon o-layout__item u-1-of-2">
+              <svg
+                class="c-tab__logo is_selected "
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                version="1.1"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M5,7A2,2 0 0,0 3,9V15A2,2 0 0,0 5,17H8V15H5V9H8V7H5M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11M11,9H13V15H11V9M16,10.5V12H19V13.5H17.5A1.5,1.5 0 0,0 16,15V18H20.5V16.5H17.5V15H19A1.5,1.5 0 0,0 20.5,13.5V12A1.5,1.5 0 0,0 19,10.5H16Z"
+                />
+              </svg>
+              <p class="c-tab__description is_selected">co2</p>
+            </div>
+            <div class="o-layout__item u-1-of-2">
+              <p class="c-sensor_data">800ppm</p>
+            </div>
+          </div>
+          <div class="o-layout__item u-1-of-2">
+            <p class="c-sensor__status">normaal</p>
+          </div>
+        </div>
+      </div>
+
+      -->
+  </body>
+</html>

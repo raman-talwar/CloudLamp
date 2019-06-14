@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>CloudLamp - locaties</title>
+    <meta name="description" content="html5 boilerplate" />
+    <meta name="viewport" content="width=device-width, inition-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/locaties.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+      integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/script/dataHandler.js"></script>
+    <script src="/script/index.js"></script>
+  </head>
+  <body class="hot">
+    <!-- <header>
+            <h1>Hello world! dit zijn de realtime gegevens</h1>
+            <p >aantal keer geklapt: <span class="js-klap"></span></p>
+            <p >huidige vochtigheid: <span class="js-vocht"></span></p>
+            <p >huidige temp: <span class="js-temp"></span></p>
+            <p >huidige co2 concentratie: <span class="js-co2"></span></p>
+        </header>
+        <h2>
+            A little bit of content
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. This is a <a href="test.com">standard link</a> distinctio facilis excepturi, reprehenderit pariatur odit, velit mollitia saepe impedit reiciendis omnis quasi sed, facere quo nobis a blanditiis.
+        </p>
+        <figure>
+            <img src="img\yawning-cat.jpeg" alt="this is a picture of a yawning cat">
+            <figcaption>yawning cat photo by martina misar</figcaption>
+        </figure>
+        <h3>
+            To get you started
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. This is a <a href="https://www.google.com">visited link</a> hic nemo dicta dignissimos dolorum obcaecati nobis tenetur laudantium iusto quibusdam vero velit magnam quam quas! Iure nobis minima accusamus fuga.
+        </p>
+        <blockquote cite="http://www.htmldog.com/reference/htmltags/blockquote/">
+            <p>
+                A blockquote is a large quotation. The content of a blockquote element must include block-level elements such as headings, lists, paragraphs or div’s. This element can also have an optional attribute cite that specifies the location (in the form of a URI) where the quote has come from.
+            </p>
+        </blockquote>
+        <h3>
+            Styling lists is easy
+        </h3>
+        <p>
+            Add an unorderd list with 3 list items here
+        </p>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, totam.</li>
+            <li>Magni est, impedit quidem fuga velit inventore facere, architecto sed!</li>
+            <li>Ea blanditiis facilis animi impedit velit aliquam, amet optio quia?</li>
+        </ul>
+        <hr>
+        <footer>
+            <p>By <strong>Your name</strong></p>
+        </footer> -->
+    <header class="c-header c-header">
+      <div class="o-layout  o-layout--align-center">
+        <div class="c-header__tab is_selected o-layout__item u-1-of-2">
+          <svg
+            class="c-tab__logo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+          <p class="c-tab__description">locaties</p>
+        </div>
+        <div class="c-header__tab  o-layout__item u-1-of-2">
+          <svg
+            class="c-tab__logo"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+          <a href="./binnen.html"><span class="link"></span></a>
+          <p class="c-tab__description">kamer</p>
+        </div>
+      </div>
+    </header>
+    <div class="o-row o-row--sm">
+        <a href="./verwijderen.html"><span class="link--sm"></span></a>
+      <svg
+        class="c-edit__icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+        />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    </div>
+    <span class="js-locaties">
+      <div class="o-row o-row--md u-pt-16">
+        <div class="o-container">
+          <div class="o-layout o-layout--align-center c-sensor">
+            <div class="u-1-of-2 o-layout__item">
+              <div class="c-title u-left ">geen locaties gevonden</div>
+              <p class="c-title c-title--sm u-left">--</p>
+            </div>
+            <p class="c-temp--sm u-right u-1-of-2 o-layout__item">--°C</p>
+          </div>
+
+          <hr class="u-mt-neg" />
+        </div>
+      </div>
+      <!-- <div class="o-row o-row--md u-pt-clear">
+        <div class="o-container">
+          <div class="o-layout o-layout--align-center c-sensor">
+            <div class="u-1-of-2 o-layout__item">
+              <div class="c-title u-left ">Brugge</div>
+              <p class="c-title c-title--sm u-left">BE</p>
+            </div>
+            <p class="c-temp--sm u-right u-1-of-2 o-layout__item">22°C</p>
+          </div>
+
+          <hr class="u-mt-neg" />
+        </div>
+      </div> -->
+      <!-- <div class="o-row o-row--md u-pt-clear">
+        <div class="o-container">
+          <div class="o-layout o-layout--align-center c-sensor">
+            <div class="u-1-of-2 o-layout__item">
+              <div class="c-title u-left ">Moscow</div>
+              <p class="c-title c-title--sm u-left">RU</p>
+            </div>
+            <p class="c-temp--sm u-right u-1-of-2 o-layout__item">22°C</p>
+          </div>
+
+          <hr class="u-mt-neg" />
+        </div>
+      </div> -->
+    </span>
+    <a href="./zoeken.html"><div class="fab">+</div></a>
+    
+    <!-- <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M5,7A2,2 0 0,0 3,9V15A2,2 0 0,0 5,17H8V15H5V9H8V7H5M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11M11,9H13V15H11V9M16,10.5V12H19V13.5H17.5A1.5,1.5 0 0,0 16,15V18H20.5V16.5H17.5V15H19A1.5,1.5 0 0,0 20.5,13.5V12A1.5,1.5 0 0,0 19,10.5H16Z"
+          />
+        </svg>
+
+        <p class="c-tab__description">kamer</p> -->
+  </body>
+</html>

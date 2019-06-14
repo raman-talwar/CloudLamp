@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>CloudLamp - weerbericht</title>
+    <meta name="description" content="html5 boilerplate" />
+    <meta name="viewport" content="width=device-width, inition-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/weerbericht.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"
+      integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I="
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="/script/dataHandler.js"></script>
+    <script src="/script/weerbericht.js"></script>
+  </head>
+  <body>
+    <div class="layer">
+    </div>
+    <!-- <header>
+            <h1>Hello world! dit zijn de realtime gegevens</h1>
+            <p >aantal keer geklapt: <span class="js-klap"></span></p>
+            <p >huidige vochtigheid: <span class="js-vocht"></span></p>
+            <p >huidige temp: <span class="js-temp"></span></p>
+            <p >huidige co2 concentratie: <span class="js-co2"></span></p>
+        </header>
+        <h2>
+            A little bit of content
+        </h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. This is a <a href="test.com">standard link</a> distinctio facilis excepturi, reprehenderit pariatur odit, velit mollitia saepe impedit reiciendis omnis quasi sed, facere quo nobis a blanditiis.
+        </p>
+        <figure>
+            <img src="img\yawning-cat.jpeg" alt="this is a picture of a yawning cat">
+            <figcaption>yawning cat photo by martina misar</figcaption>
+        </figure>
+        <h3>
+            To get you started
+        </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. This is a <a href="https://www.google.com">visited link</a> hic nemo dicta dignissimos dolorum obcaecati nobis tenetur laudantium iusto quibusdam vero velit magnam quam quas! Iure nobis minima accusamus fuga.
+        </p>
+        <blockquote cite="http://www.htmldog.com/reference/htmltags/blockquote/">
+            <p>
+                A blockquote is a large quotation. The content of a blockquote element must include block-level elements such as headings, lists, paragraphs or div’s. This element can also have an optional attribute cite that specifies the location (in the form of a URI) where the quote has come from.
+            </p>
+        </blockquote>
+        <h3>
+            Styling lists is easy
+        </h3>
+        <p>
+            Add an unorderd list with 3 list items here
+        </p>
+        <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, totam.</li>
+            <li>Magni est, impedit quidem fuga velit inventore facere, architecto sed!</li>
+            <li>Ea blanditiis facilis animi impedit velit aliquam, amet optio quia?</li>
+        </ul>
+        <hr>
+        <footer>
+            <p>By <strong>Your name</strong></p>
+        </footer> -->
+    <header class="c-header">
+      <div class="o-layout  o-layout--align-center">
+        <div class="o-layout__item u-width-auto u-pl-16">
+            <a href="./index.html"><span class="link"></span></a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+          </svg>
+        </div>
+        <div class=" o-layout__item u-1-of-2">
+          <div class="c-title c-title--lg">Weerbericht</div>
+        </div>
+      </div>
+    </header>
+    <div class="o-row o-row--md">
+      <div class="o-container">
+        <div class="center js-dots">
+        </div>
+        <div class="c-title js-city">wordt geladen</div>
+        <p class="c-temp--main">
+          <span class="before">
+              <!-- <svg class="js-previous" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11.67 3.87L9.9 2.1 0 12l9.9 9.9 1.77-1.77L3.54 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg>         -->
+              </span> <span class="js-temp">--</span>°C
+          <span class="after">
+            <!-- <svg
+              class="js-next"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M5.88 4.12L13.76 12l-7.88 7.88L8 22l10-10L8 2z" />
+              <path fill="none" d="M0 0h24v24H0z" /></svg> -->
+            </span>
+        </p>
+        <div class="c-title js-desc">even geduld</div>
+        <hr />
+      </div>
+    </div>
+    <div class="o-row o-row--md u-pt-clear">
+      <div class="o-container">
+        <div class=" c-title c-title--sm">DETAILS</div>
+        <div class="o-layout o-layout--align-center c-sensor">
+                <div class="o-layout  o-layout--align-center u-1-of-2 o-layout__item">
+                  <div class="c-icon o-layout__item u-1-of-2">
+                    <svg
+                      class="c-tab__logo is_selected"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      version="1.1"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      >
+                      <path
+                        d="M12,3.25C12,3.25 6,10 6,14C6,17.32 8.69,20 12,20C15.31,20 18,17.31 18,14C18,10 12,3.25 12,3.25M14.47,9.97L15.53,11.03L9.53,17.03L8.47,15.97M9.75,10C10.44,10 11,10.56 11,11.25C11,11.94 10.44,12.5 9.75,12.5C9.06,12.5 8.5,11.94 8.5,11.25C8.5,10.56 9.06,10 9.75,10M14.25,14.5C14.94,14.5 15.5,15.06 15.5,15.75C15.5,16.44 14.94,17 14.25,17C13.56,17 13,16.44 13,15.75C13,15.06 13.56,14.5 14.25,14.5Z"
+                      />
+                    </svg>
+                    <p class="c-tab__description is_selected">vochtigheid</p>
+                  </div>
+                  <div class="o-layout__item u-1-of-2">
+                    <p class="c-sensor_data "><span class="js-vocht">--</span>%</p>
+                  </div>
+                </div>
+                <div class="o-layout  o-layout--align-center u-1-of-2 o-layout__item">
+                  <div class="c-icon o-layout__item u-1-of-2">
+                    
+                    <svg class="c-tab__logo is_selected" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M19.35,10.03C18.67,6.59 15.64,4 12,4C9.11,4 6.6,5.64 5.35,8.03C2.34,8.36 0,10.9 0,14A6,6 0 0,0 6,20H19A5,5 0 0,0 24,15C24,12.36 21.95,10.22 19.35,10.03Z" /></svg>
+      
+                    <p class="c-tab__description is_selected">wolken</p>
+                  </div>
+                  <div class="o-layout__item u-1-of-2">
+                    <p class="c-sensor_data "><span class="js-cloud">--</span>%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="o-layout o-layout--align-center c-sensor">
+                    <div class="o-layout  o-layout--align-center u-1-of-2 o-layout__item">
+                      <div class="c-icon o-layout__item u-1-of-2">
+                        
+                        <svg class="c-tab__logo is_selected" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M4,10A1,1 0 0,1 3,9A1,1 0 0,1 4,8H12A2,2 0 0,0 14,6A2,2 0 0,0 12,4C11.45,4 10.95,4.22 10.59,4.59C10.2,5 9.56,5 9.17,4.59C8.78,4.2 8.78,3.56 9.17,3.17C9.9,2.45 10.9,2 12,2A4,4 0 0,1 16,6A4,4 0 0,1 12,10H4M19,12A1,1 0 0,0 20,11A1,1 0 0,0 19,10C18.72,10 18.47,10.11 18.29,10.29C17.9,10.68 17.27,10.68 16.88,10.29C16.5,9.9 16.5,9.27 16.88,8.88C17.42,8.34 18.17,8 19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14H5A1,1 0 0,1 4,13A1,1 0 0,1 5,12H19M18,18H4A1,1 0 0,1 3,17A1,1 0 0,1 4,16H18A3,3 0 0,1 21,19A3,3 0 0,1 18,22C17.17,22 16.42,21.66 15.88,21.12C15.5,20.73 15.5,20.1 15.88,19.71C16.27,19.32 16.9,19.32 17.29,19.71C17.47,19.89 17.72,20 18,20A1,1 0 0,0 19,19A1,1 0 0,0 18,18Z" /></svg>
+          
+                        <p class="c-tab__description is_selected">wind</p>
+                      </div>
+                      <div class="o-layout__item u-1-of-2">
+                        <p class="c-sensor_data"><span class="js-wind">--</span>km/h</p>
+                      </div>
+                    </div>
+                    <div class="o-layout  o-layout--align-center u-1-of-2 o-layout__item">
+                      <div class="c-icon o-layout__item u-1-of-2"> 
+                        <svg class="c-tab__logo is_selected" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,14.4 19,16.5 17.3,18C15.9,16.7 14,16 12,16C10,16 8.2,16.7 6.7,18C5,16.5 4,14.4 4,12A8,8 0 0,1 12,4M14,5.89C13.62,5.9 13.26,6.15 13.1,6.54L11.81,9.77L11.71,10C11,10.13 10.41,10.6 10.14,11.26C9.73,12.29 10.23,13.45 11.26,13.86C12.29,14.27 13.45,13.77 13.86,12.74C14.12,12.08 14,11.32 13.57,10.76L13.67,10.5L14.96,7.29L14.97,7.26C15.17,6.75 14.92,6.17 14.41,5.96C14.28,5.91 14.15,5.89 14,5.89M10,6A1,1 0 0,0 9,7A1,1 0 0,0 10,8A1,1 0 0,0 11,7A1,1 0 0,0 10,6M7,9A1,1 0 0,0 6,10A1,1 0 0,0 7,11A1,1 0 0,0 8,10A1,1 0 0,0 7,9M17,9A1,1 0 0,0 16,10A1,1 0 0,0 17,11A1,1 0 0,0 18,10A1,1 0 0,0 17,9Z" /></svg>
+                        <p class="c-tab__description is_selected">luchtdruk</p>
+                      </div>
+                      <div class="o-layout__item u-1-of-2">
+                        <p class="c-sensor_data"><span class="js-druk">--</span></br>hPa</p>
+                      </div>
+                    </div>
+                  </div>
+        
+        <hr />
+        
+      </div>
+    </div>
+      <div class="o-row o-row--md u-pt-clear">
+            <div class="o-container">
+    
+                <ul class="js-forecast">
+                    <li class="c-weekdag o-layout">
+                        <span class="o-layout__item u-width-forecast">--</span>
+                        <span class="o-layout__item u-width-auto">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+                        </span>
+                        <div class="u-width-forecast o-layout u-right ">
+                            <span class="o-layout__item u-1-of-2">--</span>
+                            <span class="o-layout__item u-1-of-2">--</span>
+                        </div>
+                        
+                      </li>
+                      <li class="c-weekdag o-layout">
+                          <span class="o-layout__item u-width-forecast">--</span>
+                          <span class="o-layout__item u-width-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+                          </span>
+                          <div class="u-width-forecast o-layout u-right ">
+                              <span class="o-layout__item u-1-of-2">--</span>
+                              <span class="o-layout__item u-1-of-2">--</span>
+                          </div>
+                          
+                        </li>
+                        <li class="c-weekdag o-layout">
+                            <span class="o-layout__item u-width-forecast">--</span>
+                            <span class="o-layout__item u-width-auto">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+                            </span>
+                            <div class="u-width-forecast o-layout u-right ">
+                                <span class="o-layout__item u-1-of-2">--</span>
+                                <span class="o-layout__item u-1-of-2">--</span>
+                            </div>
+                            
+                          </li>
+                          <li class="c-weekdag o-layout">
+                              <span class="o-layout__item u-width-forecast">--</span>
+                              <span class="o-layout__item u-width-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+                              </span>
+                              <div class="u-width-forecast o-layout u-right ">
+                                  <span class="o-layout__item u-1-of-2">--</span>
+                                  <span class="o-layout__item u-1-of-2">--</span>
+                              </div>
+                              
+                            </li>
+                            <li class="c-weekdag o-layout">
+                                <span class="o-layout__item u-width-forecast">--</span>
+                                <span class="o-layout__item u-width-auto">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+                                </span>
+                                <div class="u-width-forecast o-layout u-right ">
+                                    <span class="o-layout__item u-1-of-2">--</span>
+                                    <span class="o-layout__item u-1-of-2">--</span>
+                                </div>
+                                
+                              </li>
+                </ul>
+            </div>
+        </div>
+      <!-- <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M5,7A2,2 0 0,0 3,9V15A2,2 0 0,0 5,17H8V15H5V9H8V7H5M11,7A2,2 0 0,0 9,9V15A2,2 0 0,0 11,17H13A2,2 0 0,0 15,15V9A2,2 0 0,0 13,7H11M11,9H13V15H11V9M16,10.5V12H19V13.5H17.5A1.5,1.5 0 0,0 16,15V18H20.5V16.5H17.5V15H19A1.5,1.5 0 0,0 20.5,13.5V12A1.5,1.5 0 0,0 19,10.5H16Z"
+          />
+        </svg>
+
+        <p class="c-tab__description">kamer</p> -->
+  
+  </div>
+  </body>
+</html>
